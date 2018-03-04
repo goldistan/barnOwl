@@ -1,0 +1,24 @@
+
+RSIhigh = 70
+RSIlow = 30
+
+[customMACDSettings]
+optInFastPeriod = 12
+optInSlowPeriod = 26
+optInSignalPeriod = 9
+
+[customEMAshortSettings]
+optInTimePeriod = 9
+
+[customEMAlongSettings]
+optInTimePeriod = 21
+
+[customSTOCHSettings]
+optInFastKPeriod = 9
+optInSlowKPeriod = 3
+optInSlowKMAType = 1
+optInSlowDPeriod = 3
+optInSlowDMAType = 1
+
+[customRSISettings]
+optInTimePeriod = 14
