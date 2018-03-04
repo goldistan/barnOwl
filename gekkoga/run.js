@@ -14,7 +14,7 @@ if(!runGA.config||!fs.existsSync(runGA.config)){
 }
 
 // temp hack to be able to run from both command line and debugger
-if(runGA.config && runGA.config.indexOf("c:") > -1){
+if(runGA.config && runGA.config.indexOf("C:") > -1){
   const config = require(runGA.config);
   const ga = new Ga(config,runGA.config);
   ga.run().catch(err => console.error(err) );
@@ -24,4 +24,3 @@ else{
   const ga = new Ga(config,runGA.config);
   ga.run().catch(err => console.error(err) );
 }
-

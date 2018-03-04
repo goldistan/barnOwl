@@ -3,6 +3,7 @@
 const _ = require('lodash');
 const promisify = require('tiny-promisify');
 const pipelineRunner = promisify(require('../../core/workers/pipeline/parent'));
+const log = require('../../core/log.js');
 
 // starts a backtest
 // requires a post body like:
@@ -28,6 +29,11 @@ module.exports = function *() {
   _.merge(config, base, req.gekkoConfig);
 
   var result = yield pipelineRunner(mode, config);
+
+  console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+  log.debug(mode);
+  log.debug(config);
+  console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
 
   if(!req.data.report)
     delete result.report;

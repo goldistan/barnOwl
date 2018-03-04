@@ -7,17 +7,23 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\gekkoga\\run",
-            "args": [
-            "-c", "${workspaceFolder}\\gekkoga\\config\\stochRSI.js"
-            ]
+            "name": "Gekko",
+            "program": "${workspaceFolder}/web/server.js",
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\--ui"
+            "name": "Gekkoga",
+            "program": "${workspaceFolder}\\gekkoga\\run",
+            "args": [
+            "-c", "${workspaceFolder}\\gekkoga\\config\\stochRSI.js"
+            ]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Server/Server2",
+            "configurations": ["Gekko","Gekkoga"]
         }
     ]
 }

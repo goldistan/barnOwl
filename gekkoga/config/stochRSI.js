@@ -26,27 +26,55 @@ const config = {
 
   },
   apiUrl: 'http://localhost:3000',
+
   // Population size, better reduce this for larger data
   populationAmt: 20,
+
   // How many completely new units will be added to the population (populationAmt * variation must be a whole number!!)
   variation: 0.5,
+
   // How many components maximum to mutate at once
   mutateElements: 7,
-  // How many parallel queries to run at once
-  parallelqueries: 10,
 
+  // How many parallel queries to run at once
+  parallelqueries: 5,
+
+  // profit || score 
+  // score = profit * sharpe -- feedback?
+  // profit = recommended!
   mainObjective: 'profit',
-  candleValues: [10,20,30],
-  getProperties: () => ({
+
+  // optionally recieve and archive new all time high every new all time high
+  notifications: {
+    email: {
+      enabled: true,
+      receiver: 'receiver@some.com',
+      senderservice: 'gmail',
+      sender: 'sender@gmail.com',
+      senderpass: 'password',
+    },
+  },
+   candleValues: [10,20,30],
+   getProperties: () => ({
     // Strat settings must be flattened and cannot be nested for mutation to work properly!
     historySize : randomExt.integer(16,10),
-    low : randomExt.integer(30,5),
-    high : randomExt.integer(95,70),
+    threshold : {
+      low : randomExt.integer(30,5),
+      high : randomExt.integer(95,70),
+      persistence : randomExt.integer(6,1),
+    },
     interval : randomExt.integer(14,7),
-    persistence : randomExt.integer(6,1),
-    candleSize: config.candleValues[randomExt.integer(config.candleValues.length -1, 0)]
-
+    candleSize: randomExt.pick(config.candleValues)
   })
+  // getProperties: () => ({
+  //   // Strat settings must be flattened and cannot be nested for mutation to work properly!
+  //   historySize : randomExt.integer(16,10),
+  //   low : randomExt.integer(30,5),
+  //   high : randomExt.integer(95,70),
+  //   interval : randomExt.integer(14,7),
+  //   persistence : randomExt.integer(6,1),
+  //   candleSize: randomExt.pick(config.candleValues)
+  // })
 };
 
 module.exports = config;
