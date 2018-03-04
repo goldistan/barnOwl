@@ -1,0 +1,26 @@
+{
+    "parameters": {
+        "historySize": 22,
+        "low": 30,
+        "high": 94,
+        "interval": 3,
+        "persistence": 3,
+        "candleSize": 30
+    },
+    "score": 57.58752615678207,
+    "profit": 5691.62589007,
+    "sharpe": 0.010117939455095459,
+    "epochNumber": 18,
+    "otherMetrics": {
+        "balance": 6756.6128887,
+        "profit": 5691.62589007,
+        "sharpe": 0.010117939455095459,
+        "market": 914.7097548721481,
+        "relativeProfit": 534.4314904681195,
+        "yearlyProfit": "5695.42898485",
+        "relativeYearlyProfit": "534.78859293",
+        "startPrice": 1063.98699863,
+        "endPrice": 10796.37986567,
+        "trades": 94
+    }
+}
