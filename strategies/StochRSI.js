@@ -61,9 +61,6 @@ method.log = function() {
 }
 
 method.check = function() {
-	console.log('#SHITTTTTTTTTTTTTTTTTTTTTTTTTTTTT#######################################################################################################################################################################################################################################');
-	console.log(this.stochRSI);
-	console.log(this.settings);
 	if(this.stochRSI > this.settings.thresholds.high) {
 		// new trend detected
 		if(this.trend.direction !== 'high')

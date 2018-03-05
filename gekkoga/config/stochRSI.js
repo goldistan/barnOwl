@@ -1,7 +1,7 @@
 const randomExt = require('random-ext');
 
 const config = {
-  stratName: 'StochRSI-GA',
+  stratName: 'StochRSI',
   gekkoConfig: {
     watch: {
       exchange: 'binance',
@@ -56,9 +56,8 @@ const config = {
   },
    candleValues: [10,20,30],
    getProperties: () => ({
-    // Strat settings must be flattened and cannot be nested for mutation to work properly!
     historySize : randomExt.integer(16,10),
-    threshold : {
+    thresholds : {
       low : randomExt.integer(30,5),
       high : randomExt.integer(95,70),
       persistence : randomExt.integer(6,1),
@@ -66,15 +65,7 @@ const config = {
     interval : randomExt.integer(14,7),
     candleSize: randomExt.pick(config.candleValues)
   })
-  // getProperties: () => ({
-  //   // Strat settings must be flattened and cannot be nested for mutation to work properly!
-  //   historySize : randomExt.integer(16,10),
-  //   low : randomExt.integer(30,5),
-  //   high : randomExt.integer(95,70),
-  //   interval : randomExt.integer(14,7),
-  //   persistence : randomExt.integer(6,1),
-  //   candleSize: randomExt.pick(config.candleValues)
-  // })
+
 };
 
 module.exports = config;

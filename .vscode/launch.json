@@ -14,9 +14,9 @@
             "type": "node",
             "request": "launch",
             "name": "Gekkoga",
-            "program": "${workspaceFolder}\\gekkoga\\run",
+            "program": "${workspaceFolder}/gekkoga/run",
             "args": [
-            "-c", "${workspaceFolder}\\gekkoga\\config\\stochRSI.js"
+            "-c", "${workspaceFolder}/gekkoga/config/stochRSI.js"
             ]
         }
     ],
